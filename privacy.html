@@ -58,12 +58,10 @@
         <li>Google Sign-In and Google Drive sync are optional.</li>
         <li>
           If you connect Google Drive, QuoteCraft reads and writes only one
-          shared JSON sync file that you create or choose with the Google
-          Picker, using the <code>drive.file</code> scope.
-        </li>
-        <li>
-          The same file can be opened by QuoteCraft on Android and on the web
-          with the same Google account.
+          shared JSON sync file that it creates for this app and Google account,
+          or that you explicitly select with the Google Picker, using the
+          <code>drive.file</code> scope. The same file can be opened by
+          QuoteCraft on Android and on the web with the same Google account.
         </li>
         <li>The publisher does not receive, sell or share your workspace data.</li>
         <li>
@@ -128,14 +126,17 @@
         Picker. It does not grant access to the rest of your Drive.
       </p>
       <p>
-        On the first device or browser, QuoteCraft can create a shared JSON file
-        named <strong>quotecraft-sync-v2.json</strong> in your Google Drive. On
-        each other device or browser, you choose that same file once with the
-        Google Picker. The file is visible in your My Drive and contains your
-        workspace data: business profiles, customers, products, quotations,
-        invoices, payments, line groups and settings. Keep it private and do not
-        share it. The Picker grants QuoteCraft access to that selected file for
-        the relevant Android or web OAuth client.
+        On Android, QuoteCraft creates the shared JSON file named
+        <strong>quotecraft-sync-v2.json</strong> on first use. On another phone
+        signed into the same Google account, it finds that app-created file
+        automatically and restores it; no Picker is needed. On the web, you
+        select the same file once with the Google Picker because the web client
+        is a separate OAuth client. The file is visible in your My Drive and
+        contains your workspace data: business profiles, customers, products,
+        quotations, invoices, payments, line groups and settings. Keep it
+        private and do not share it. The Picker or automatic app-only discovery
+        grants QuoteCraft access to that file; it does not grant access to the
+        rest of your Drive.
       </p>
       <p>
         Google Drive sync is on by default after a sync file is selected. When
