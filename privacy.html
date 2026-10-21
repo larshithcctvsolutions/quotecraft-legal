@@ -84,6 +84,11 @@
           templates.
         </li>
         <li>A random sync device identifier and sync flags.</li>
+        <li>
+          A small local diagnostics log (the text of unexpected errors, up to
+          the last 100 entries). It never leaves the device and you can clear it
+          in Help &amp; FAQ &rarr; Diagnostics.
+        </li>
       </ul>
       <p>The web app may store in browser storage:</p>
       <ul>
@@ -129,9 +134,13 @@
         On Android, QuoteCraft creates the shared JSON file named
         <strong>quotecraft-sync-v2.json</strong> on first use. On another phone
         signed into the same Google account, it finds that app-created file
-        automatically and restores it; no Picker is needed. On the web, you
-        select the same file once with the Google Picker because the web client
-        is a separate OAuth client. The file is visible in your My Drive and
+        automatically and restores it; no Picker is needed. If two phones each
+        created a sync file, Android merges every copy into one file and renames
+        the older copies (it does not delete them). On the web, you select the
+        same file once with the Google Picker because the web client is a
+        separate OAuth client; the browser remembers that file for the
+        signed-in Google account, so later visits restore it without the Picker.
+        The file is visible in your My Drive and
         contains your workspace data: business profiles, customers, products,
         quotations, invoices, payments, line groups and settings. Keep it
         private and do not share it. The Picker or automatic app-only discovery
@@ -143,11 +152,14 @@
         online, QuoteCraft merges local changes into the file shortly after they
         are saved, and merges changes from other devices when the app or browser
         is opened or refreshed, returns to the foreground, or when you tap
-        <strong>Sync now</strong>. Records are merged by stable IDs. If two
-        devices use the same quotation number for distinct documents, both are
-        preserved; drafts may be renumbered and issued documents are flagged for
-        number review. If the same record is edited on two devices at once, the
-        most recently updated version wins.
+        <strong>Sync now</strong>. On Android a background worker may also
+        check the same file about every 15 minutes while the phone is online and
+        a Google account is linked; it performs only this sync, and pausing or
+        deleting the Drive copy stops it. Records are merged by stable IDs. If
+        two devices use the same quotation number for distinct documents, both
+        are preserved; drafts may be renumbered and issued documents are flagged
+        for number review. If the same record is edited on two devices at once,
+        the most recently updated version wins.
       </p>
       <p>
         The data is transferred over HTTPS directly between QuoteCraft and
@@ -187,7 +199,10 @@
       </ul>
       <p>
         QuoteCraft contains no advertising, analytics, tracking or
-        crash-reporting SDK. It does not process payments or connect to a bank.
+        crash-reporting SDK. Unexpected errors are written to a local
+        diagnostics log that you can read and clear in Help &amp; FAQ; it is
+        never uploaded. QuoteCraft does not process payments or connect to a
+        bank.
       </p>
 
       <h2 id="exports">Sharing, printing and exports</h2>
