@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QuoteCraft — Quotation &amp; Invoice Maker</title>
+    <meta
+      name="description"
+      content="QuoteCraft is a local-first quotation and invoice maker for Android and the web. Work offline, export professional PDFs, and optionally sync through your own Google Drive."
+    />
+    <link rel="icon" href="icon-512.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./">
+          <img src="icon-512.png" alt="" width="40" height="40" />
+          <span>
+            <strong>QuoteCraft</strong>
+            <small>Quotation &amp; invoice maker</small>
+          </span>
+        </a>
+        <nav aria-label="Main">
+          <a href="#features">Features</a>
+          <a href="#google">Google sync</a>
+          <a href="privacy.html">Privacy</a>
+          <a class="nav-contact" href="mailto:noreplyautoengine@gmail.com">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Quotation &amp; invoice maker</p>
+            <h1>Your work,<br />on your account.</h1>
+            <p class="lede">
+              QuoteCraft is a local-first quotation and invoice app for Android
+              and the web. Create GST-ready documents and professional PDFs
+              offline, then optionally sync across your devices through a file
+              in your own Google Drive.
+            </p>
+            <div class="actions">
+              <a class="button" href="privacy.html">Read the privacy policy</a>
+              <a class="button ghost" href="mailto:noreplyautoengine@gmail.com">Contact support</a>
+            </div>
+            <ul class="check-list">
+              <li>No QuoteCraft server receives your quotations or customers</li>
+              <li>Local accounts and offline work need no Google account</li>
+              <li>Google Drive access is limited to the sync file you choose</li>
+            </ul>
+          </div>
+          <div class="hero-visual">
+            <div class="phone">
+              <img
+                src="screens/dashboard.png"
+                alt="QuoteCraft dashboard showing quotation totals, recent documents and quick actions"
+                width="360"
+                height="800"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="wrap">
+          <p class="eyebrow dark">Built for the workday</p>
+          <h2>Quotations, invoices and materials in one place</h2>
+          <p class="section-lede">
+            QuoteCraft is designed for small businesses that need dependable
+            documents without a monthly subscription or a mandatory cloud
+            account.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <span class="card-kicker">01</span>
+              <h3>Offline-first</h3>
+              <p>
+                Create quotations and invoices, manage customers and build your
+                material catalogue without an internet connection.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-kicker">02</span>
+              <h3>GST-ready documents</h3>
+              <p>
+                Line items, tax rates, discounts, totals, terms and sequential
+                document numbers are calculated inside the app.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-kicker">03</span>
+              <h3>Six PDF templates</h3>
+              <p>
+                Choose from six quotation layouts, each with ten colour palettes,
+                then export and share a polished PDF.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-kicker">04</span>
+              <h3>Optional Drive sync</h3>
+              <p>
+                Sign in with your own Google account and keep one mergeable sync
+                file in your Drive. Sync only runs when you choose to use it.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-kicker">05</span>
+              <h3>Local accounts</h3>
+              <p>
+                Password accounts are stored on the device with salted PBKDF2
+                hashes. Google Sign-In is an optional addition, not a requirement.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-kicker">06</span>
+              <h3>Android and web</h3>
+              <p>
+                Use the same Google account to open the same sync file from the
+                Android app and the web app, with per-record conflict handling.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tinted" id="google">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow dark">Google Sign-In and Drive</p>
+            <h2>Your Google account. Your Drive file.</h2>
+            <p class="section-lede">
+              Google integration is optional. When you choose to use it,
+              QuoteCraft asks Google for the narrow
+              <code>drive.file</code> permission. It can create a sync file and
+              read or write only files that you create or explicitly select with
+              the Google Picker.
+            </p>
+            <ol class="steps">
+              <li>
+                <strong>Sign in on your device.</strong> Google shows its own
+                account picker. Use any Google account that you control.
+              </li>
+              <li>
+                <strong>Create or choose one sync file.</strong> The file lives
+                in your own Drive and contains only QuoteCraft workspace data.
+              </li>
+              <li>
+                <strong>Sync across your devices.</strong> Open the same file on
+                Android or the web with the same account. Changes are merged
+                without sending your data to a QuoteCraft server.
+              </li>
+            </ol>
+          </div>
+          <div class="templates">
+            <img
+              src="screens/templates.png"
+              alt="QuoteCraft template gallery showing six quotation designs"
+              loading="lazy"
+            />
+            <img
+              src="screens/quote-editor.png"
+              alt="QuoteCraft quotation editor with line items and totals"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap notice">
+          <div>
+            <h2>Privacy by default</h2>
+            <p>
+              QuoteCraft does not operate a server for your workspace, does not
+              include advertising or analytics SDKs, and does not receive your
+              customer, quotation or invoice data. Read the full
+              <a href="privacy.html">privacy policy</a>.
+            </p>
+          </div>
+          <a class="button" href="privacy.html">Privacy policy</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>&copy; 2026 QuoteCraft. All rights reserved.</p>
+        <p>
+          <a href="privacy.html">Privacy</a>
+          <a href="mailto:noreplyautoengine@gmail.com">noreplyautoengine@gmail.com</a>
+        </p>
+      </div>
+      <div class="wrap fine-print">
+        <p>
+          QuoteCraft is an independent app and is not affiliated with Google.
+          Google Drive and Google Sign-In are services of Google LLC.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

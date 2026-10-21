@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — QuoteCraft</title>
+    <meta
+      name="description"
+      content="QuoteCraft privacy policy: local-first workspace data, optional Google Sign-In and Google Drive sync through a file you choose."
+    />
+    <link rel="icon" href="icon-512.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="legal-page">
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./">
+          <img src="icon-512.png" alt="" width="40" height="40" />
+          <span>
+            <strong>QuoteCraft</strong>
+            <small>Quotation &amp; invoice maker</small>
+          </span>
+        </a>
+        <nav aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="#google">Google data</a>
+          <a href="mailto:noreplyautoengine@gmail.com">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap legal">
+      <p class="eyebrow dark">Privacy policy</p>
+      <h1>QuoteCraft Privacy Policy</h1>
+      <p class="meta">
+        <strong>Effective date:</strong> 21 October 2026<br />
+        <strong>App:</strong> QuoteCraft — Quotation &amp; Invoice Maker
+        (<code>com.vivek.quotecraft</code>) and its web app<br />
+        <strong>Publisher:</strong> QuoteCraft<br />
+        <strong>Contact:</strong>
+        <a href="mailto:noreplyautoengine@gmail.com">noreplyautoengine@gmail.com</a>
+      </p>
+
+      <div class="legal-callout">
+        <p>
+          <strong>Short version.</strong> QuoteCraft is a local-first business
+          document app. The publisher does not operate a server that receives
+          your quotations, customers or files. Workspace data stays on your
+          device unless you choose to sync it through one file in your own
+          Google Drive.
+        </p>
+      </div>
+
+      <h2 id="summary">Summary</h2>
+      <ul>
+        <li>Workspace data is stored on your device or in your browser.</li>
+        <li>Local accounts and local use work without Google.</li>
+        <li>Google Sign-In and Google Drive sync are optional.</li>
+        <li>
+          If you connect Google Drive, QuoteCraft reads and writes only one
+          shared JSON sync file that you create or choose with the Google
+          Picker, using the <code>drive.file</code> scope.
+        </li>
+        <li>
+          The same file can be opened by QuoteCraft on Android and on the web
+          with the same Google account.
+        </li>
+        <li>The publisher does not receive, sell or share your workspace data.</li>
+        <li>
+          QuoteCraft contains no advertising, analytics or crash-reporting SDK.
+        </li>
+      </ul>
+
+      <h2 id="stored">Information stored on your device or browser</h2>
+      <p>Android may store:</p>
+      <ul>
+        <li>
+          Account name, email address, a salted and hashed local password
+          (PBKDF2-HMAC-SHA256), the Google account identifier when you link
+          Google, and session state. These are kept in Android
+          Keystore-backed secure storage.
+        </li>
+        <li>
+          An optional app-lock PIN hash and biometric setting. Biometric
+          matching is performed by Android; QuoteCraft never receives biometric
+          templates.
+        </li>
+        <li>A random sync device identifier and sync flags.</li>
+      </ul>
+      <p>The web app may store in browser storage:</p>
+      <ul>
+        <li>The signed-in Google account's email and display name.</li>
+        <li>
+          The selected sync file ID and name, last successful sync time, a
+          random device identifier and whether sync is paused.
+        </li>
+        <li>
+          Google access tokens are kept in memory only and are not written to
+          browser storage.
+        </li>
+      </ul>
+      <p>
+        Both clients store business profiles, logos, signatures, stamps,
+        GSTIN/PAN, bank/UPI details, customer and product records, quotations,
+        invoices, payments, notes, terms, custom fields and settings.
+      </p>
+      <p>
+        Android workspace records are stored in an app-private SQLite database,
+        and Android automatic backup is disabled. The web workspace is stored
+        in the browser's IndexedDB. Local passwords and PINs are not recoverable
+        by the publisher.
+      </p>
+
+      <h2 id="google">Google Sign-In and Google Drive</h2>
+      <p>
+        If you choose <strong>Continue with Google</strong> or
+        <strong>Connect Google Drive</strong> on Android, or sign in with Google
+        in the web app, Google provides QuoteCraft with your Google account
+        name, email address and account identifier so it can link the workspace
+        to that account. QuoteCraft requests the Google OAuth scope:
+      </p>
+      <p><code>https://www.googleapis.com/auth/drive.file</code></p>
+      <p>
+        QuoteCraft also requests <code>openid</code>, <code>email</code> and
+        <code>profile</code> on web so it can show the signed-in account. The
+        <code>drive.file</code> scope lets QuoteCraft create files and access
+        only files that it created or that you explicitly select with the Google
+        Picker. It does not grant access to the rest of your Drive.
+      </p>
+      <p>
+        On the first device or browser, QuoteCraft can create a shared JSON file
+        named <strong>quotecraft-sync-v2.json</strong> in your Google Drive. On
+        each other device or browser, you choose that same file once with the
+        Google Picker. The file is visible in your My Drive and contains your
+        workspace data: business profiles, customers, products, quotations,
+        invoices, payments, line groups and settings. Keep it private and do not
+        share it. The Picker grants QuoteCraft access to that selected file for
+        the relevant Android or web OAuth client.
+      </p>
+      <p>
+        Google Drive sync is on by default after a sync file is selected. When
+        online, QuoteCraft merges local changes into the file shortly after they
+        are saved, and merges changes from other devices when the app or browser
+        is opened or refreshed, returns to the foreground, or when you tap
+        <strong>Sync now</strong>. Records are merged by stable IDs. If two
+        devices use the same quotation number for distinct documents, both are
+        preserved; drafts may be renumbered and issued documents are flagged for
+        number review. If the same record is edited on two devices at once, the
+        most recently updated version wins.
+      </p>
+      <p>
+        The data is transferred over HTTPS directly between QuoteCraft and
+        Google's Drive API. It is stored in your Google account under Google's
+        terms and privacy policy. The publisher does not operate a server in
+        this path and does not receive a copy of the file. Google may process
+        account and usage information under its own policies; see
+        <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.
+      </p>
+      <p>
+        <strong>Google API Services User Data Policy — Limited Use.</strong>
+        QuoteCraft's use and transfer to any other app of information received
+        from Google APIs will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>,
+        including the Limited Use requirements.
+      </p>
+      <p>
+        You can stop using Google at any time. <strong>Delete Drive copy</strong>
+        in Account &amp; sync (Android) or Google Drive sync (web) deletes the
+        shared sync file and pauses sync. You can also revoke QuoteCraft's
+        access at
+        <a href="https://myaccount.google.com/permissions" rel="noopener">Google Account permissions</a>.
+        Revoking access does not by itself delete the file already stored in
+        Drive; use the in-app delete control or Google's account tools.
+      </p>
+
+      <h2 id="not-collected">Information the publisher does not collect</h2>
+      <p>The publisher does not receive:</p>
+      <ul>
+        <li>your quotations, invoices, customer or product records;</li>
+        <li>your passwords, PINs or biometric data;</li>
+        <li>
+          your location, contacts, SMS, call logs, photos or files outside the
+          chosen QuoteCraft sync file;
+        </li>
+        <li>advertising identifiers or analytics/telemetry from QuoteCraft.</li>
+      </ul>
+      <p>
+        QuoteCraft contains no advertising, analytics, tracking or
+        crash-reporting SDK. It does not process payments or connect to a bank.
+      </p>
+
+      <h2 id="exports">Sharing, printing and exports</h2>
+      <p>
+        PDFs, CSV files and backups leave the app only when you choose to share,
+        print or export them. Android or the browser then passes the file to the
+        app or service you select (for example Gmail, WhatsApp or a printer).
+        That recipient handles the file under its own privacy policy. QuoteCraft
+        does not upload those files to the publisher. Local backup files you
+        create remain wherever you save them until you delete them.
+      </p>
+
+      <h2 id="permissions">Permissions</h2>
+      <ul>
+        <li>
+          <strong>INTERNET</strong> — used only for optional Google Sign-In,
+          Google Picker and Google Drive sync. Local accounts and local work
+          continue to function offline.
+        </li>
+        <li>
+          <strong>ACCESS_NETWORK_STATE</strong> — used to decide when pending
+          sync work can run. It does not access network traffic or personal
+          data.
+        </li>
+        <li>
+          <strong>USE_BIOMETRIC / USE_FINGERPRINT</strong> — used only if you
+          enable biometric app unlock. Android performs the matching.
+        </li>
+        <li>
+          <strong>File picker access</strong> — used only when you choose a
+          logo, signature, stamp, backup file, sync file or export destination.
+        </li>
+      </ul>
+      <p>
+        The app does not request location, contacts, camera, microphone, SMS or
+        broad storage permissions.
+      </p>
+
+      <h2 id="security">Security</h2>
+      <p>
+        Android workspace data is kept in app-private storage. Account passwords
+        are salted and hashed with PBKDF2-HMAC-SHA256 (150,000 iterations).
+        Google session tokens are held by Google Sign-In; the web access token
+        is held in memory only. The QuoteCraft database does not store Google
+        access tokens. Google Drive traffic uses HTTPS. Optional local backup
+        files can be encrypted with AES-GCM using a password-derived key.
+      </p>
+      <p>
+        The web access token expires after a period and must be reacquired by
+        signing in again; the web app does not use a backend or refresh token.
+        No security measure is perfect. Use a device screen lock, keep your
+        passwords safe, and maintain backups. The publisher cannot recover a
+        forgotten local password, PIN or encrypted-backup password.
+      </p>
+
+      <h2 id="retention">Retention, deletion and your choices</h2>
+      <ul>
+        <li>
+          You can edit or delete customers, products, draft documents and
+          businesses inside the app. Deleting a business removes its associated
+          records after confirmation.
+        </li>
+        <li>
+          <strong>Account &amp; sync → Delete Drive copy</strong> deletes the
+          shared QuoteCraft sync file from Google Drive and pauses further
+          uploads.
+        </li>
+        <li>
+          <strong>Account &amp; sync → Erase all local data &amp; accounts</strong>
+          permanently removes the local workspace, all local accounts, the app
+          PIN and local sync state on the phone. It does not delete a Drive
+          copy; use Delete Drive copy first for that.
+        </li>
+        <li>
+          In the web app, <strong>Erase all data</strong> clears the browser
+          workspace and disconnects Google sync; the Drive file is left
+          untouched unless you choose Delete Drive copy first.
+        </li>
+        <li>
+          Signing out or disconnecting Google leaves the local workspace in
+          place. Uninstalling the app removes the Android app-private database
+          and secure-storage accounts, subject to Android behavior. Clearing
+          browser storage removes the web workspace.
+        </li>
+        <li>
+          Local backup files and files you shared remain wherever you saved or
+          sent them.
+        </li>
+        <li>
+          To remove Google authorization, use the in-app delete control and/or
+          <a href="https://myaccount.google.com/permissions" rel="noopener">Google Account permissions</a>.
+        </li>
+      </ul>
+      <p>
+        Because the publisher does not operate an account server, there is no
+        publisher-side account or workspace data to delete. For privacy
+        questions, contact
+        <a href="mailto:noreplyautoengine@gmail.com">noreplyautoengine@gmail.com</a>.
+      </p>
+
+      <h2 id="children">Children</h2>
+      <p>
+        QuoteCraft is a business tool intended for adults and is not directed to
+        children. The publisher does not knowingly collect personal information
+        from children.
+      </p>
+
+      <h2 id="changes">Changes</h2>
+      <p>
+        If this policy changes, the updated version will be published at the
+        same public URL with a new effective date. If a future version adds
+        off-device processing that changes these practices, the policy and
+        Google Play Data safety disclosures will be updated before that version
+        is released.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        QuoteCraft support:
+        <a href="mailto:noreplyautoengine@gmail.com">noreplyautoengine@gmail.com</a>
+      </p>
+
+      <p class="legal-back"><a href="index.html">← Back to QuoteCraft</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>&copy; 2026 QuoteCraft. All rights reserved.</p>
+        <p><a href="index.html">Home</a> <a href="mailto:noreplyautoengine@gmail.com">Support</a></p>
+      </div>
+      <div class="wrap fine-print">
+        <p>
+          QuoteCraft is an independent app and is not affiliated with Google.
+          Google Drive and Google Sign-In are services of Google LLC.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
